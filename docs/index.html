@@ -12,17 +12,36 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: 'AutoParts Cube',
-      repo: '',
-      loadSidebar:true,
+      name: {
+        '/zh-cn/': 'AutoParts Cube 中文',
+        '/es-la/': 'AutoParts Cube Español (LATAM)',
+        '/fr-fr/': 'AutoParts Cube Français',
+        '/pt-br/': 'AutoParts Cube Português (Brasil)',
+        '/': 'AutoParts Cube'
+      },
+      nameLink: {
+        '/zh-cn/': '#/zh-cn/',
+        '/es-la/': '#/es-la/',
+        '/fr-fr/': '#/fr-fr/',
+        '/pt-br/': '#/pt-br/',
+        '/': '#/'
+      },
+      
+      // 多语言侧边栏
+      alias: {
+        '/zh-cn/.*/_sidebar.md': '/zh-cn/_sidebar.md',
+        '/es-la/.*/_sidebar.md': '/es-la/_sidebar.md',
+        '/fr-fr/.*/_sidebar.md': '/fr-fr/_sidebar.md',
+        '/pt-br/.*/_sidebar.md': '/pt-br/_sidebar.md',
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      loadSidebar: true,
+      loadNavbar: true,  // 启用导航栏
       autoHeader: true,
       mergeNavbar: true,
-      subMaxLevel:4, 
-      // 最大子目录深度为2
+      subMaxLevel: 4,
       notFoundPage: true,
-      alias:{
-        '/.*/_sidebar.md': '/_sidebar.md',
-      },
+      
       footer: {
         copy: '<span> AutoParts Cube </span>',
         auth: ' ▪   welcome to contact Whatsapp/Phone: 008615876892703',
@@ -30,14 +49,29 @@
         style: 'text-align: left;',
         class: 'className',
       },
-      coverpage: true,
-      // coverpage: {
-      //   '/': 'cover.md',
-      // },
-
+      
+      // 多语言封面
+      coverpage: {
+        '/': '_coverpage.md', 
+        '/zh-cn/': '/zh-cn/_coverpage.md', 
+        '/es-la/': '/es-la/_coverpage.md', 
+        '/fr-fr/': '/fr-fr/_coverpage.md', 
+        '/pt-br/': '/pt-br/_coverpage.md'
+      },
+      onlyCover: false,
     }
   </script>
   <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+     <!-- Required -->
+     <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+   
+       <!-- Recommended -->
+       <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+       <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
+       <script src="https://unpkg.com/docsify-ads@1.0.4/dist/docsify-ads.min.js"></script>
 </body>
 </html>

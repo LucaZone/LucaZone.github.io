@@ -11,3 +11,4 @@
 
 ![](_media/bg.png)
 
+![color](#000)
